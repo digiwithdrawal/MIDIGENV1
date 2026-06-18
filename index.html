@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIDI-GEN</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="site-shell">
+    <nav class="top-nav">
+      <button data-action="generate">GENERATE</button>
+      <button data-action="random">RANDOM</button>
+      <button data-action="play">PLAY</button>
+      <button data-action="visualizer">VISUALIZER</button>
+      <button data-action="download">DOWNLOAD</button>
+    </nav>
+
+    <section class="hero-grid">
+      <div class="left-column">
+        <header class="brand-block">
+          <h1>MIDI-GEN</h1>
+          <p>- made by chris</p>
+        </header>
+
+        <div class="barcode"></div>
+
+        <h2 class="tagline">UNLEASH YOUR BEAT</h2>
+
+        <section class="poster-panel">
+          <div class="poster-text">
+            STYLE<br />
+            SWAG<br />
+            SOUND
+          </div>
+        </section>
+      </div>
+
+      <div class="right-column">
+        <section class="visual-panel">
+          <div class="spark spark-one">✦</div>
+          <div class="spark spark-two">✦</div>
+
+          <div id="visualizer" class="visualizer hidden">
+            <div class="bars">
+              <span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="cd">
+              <div class="cd-hole"></div>
+            </div>
+          </div>
+
+          <div id="visualPlaceholder" class="visual-placeholder">
+            GENERATE<br />A BEAT
+          </div>
+        </section>
+
+        <section class="control-panel">
+          <label>
+            GENRE
+            <select id="genreSelect"></select>
+          </label>
+
+          <label>
+            BPM / TEMPO
+            <input id="bpmInput" type="number" min="50" max="220" value="140" />
+          </label>
+
+          <div class="button-grid">
+            <button id="generateBtn">GENERATE</button>
+            <button id="randomBtn">RANDOM</button>
+            <button id="playBtn">PLAY</button>
+            <button id="visualBtn">VISUALIZER</button>
+            <button id="downloadBtn">DOWNLOAD MIDI</button>
+          </div>
+        </section>
+
+        <section class="track-panel">
+          <div class="track-header">
+            <span>INSTRUMENT</span>
+            <span>BEAT VIEW</span>
+            <span>MUTE</span>
+          </div>
+
+          <div id="tracks"></div>
+        </section>
+
+        <section class="info-panel">
+          <p id="statusText">
+            Pick a genre, generate a beat, mute any instrument, then download only the unmuted MIDI tracks.
+          </p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
